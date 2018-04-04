@@ -50,5 +50,4 @@ it will use the port 8012
 `npm install`
 
 ### Now run:
-`npm start`
-open http://localhost:8012
+`npm start` in the root folder and open http://localhost:8012
