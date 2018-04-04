@@ -3,9 +3,8 @@
 This is a simple app that uses socket io + angularjs v1.2.32.
 
 The client sends a message to the server and the server broadcast this message back.
-![Screenshot](prints/chat-001.png)
 
-![app](http://g.recordit.co/2hAmZVsMR7.gif)
+![Screenshot](prints/chat-001.png)
 
 ### TODO:
 - [x] Create a new project on Github
