@@ -29,7 +29,7 @@ The client sends a message to the server and the server broadcast this message b
     Mike to Brian : Hi, Brian
 
     When a user choose to talk privatly to another user a new view(room) show be created.
-5) [ ] Allow user to create a new room.
+5) [ ] Allow user to create a new room. Right now there's only two rooms.
 6) [ ] For distante future: Allow the user to use or upload an avatar
 
 
