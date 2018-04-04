@@ -21,16 +21,16 @@ The client sends a message to the server and the server broadcast this message b
 - [x] Make it pretty.
 
 ### TODO(update):
-1) [] Fix close button icon size
-2) [] Fiz messages animation:
+1) [ ] Fix close button icon size
+2) [ ] Fiz messages animation:
         When the user clicks the close icon all messages animation. Prevent them from doing so.
-3) [] Refactor io.services
-4) [] Allow users to send public messages others in the same room. Now they can only send messages to everyone or private messages to another user.
+3) [ ] Refactor io.services
+4) [ ] Allow users to send public messages others in the same room. Now they can only send messages to everyone or private messages to another user.
     The message should apper like this: 
     Mike to Brian : Hi, Brian
 
     When a user choose to talk privatly to another user a new view(room) show be created.
-5) [] For distante future: Allow the user to use or upload an avatar
+5) [ ] For distante future: Allow the user to use or upload an avatar
 
 
 ## Running
