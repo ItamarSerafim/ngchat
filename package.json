@@ -1,0 +1,23 @@
+{
+  "name": "ngchat",
+  "version": "1.0.0",
+  "description": "This project intended for creating the first scretach of a chat-room site",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItamarSerafim/chat-room.git"
+  },
+  "keywords": [
+    "chatroom"
+  ],
+  "author": "Itamar Serafim Silva",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/ItamarSerafim/chat-room/issues"
+  },
+  "homepage": "https://github.com/ItamarSerafim/chat-room#readme"
+}

@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>mini-chat</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Meet great people to chat">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body ng-app="myApp">
+  <main ng-controller="MainController" data-ng-class="{'logged-in': initiated}">
+      <header data-ng-show="initiated">
+          <h3 class="room-title">
+            {{selectedRoom.title}} <span class="room-title-num-people">( {{usersList.length}} {{usersList.length == 1 ? 'person' : 'people'}}) </span>
+            <span class="menu-trigger zoomin" data-ng-click="showUsersList = !showUsersList" data-ng-hide="showUsersList">
+                ☰ 
+            </span>
+            <span class="menu-trigger zoomin" data-ng-click="showUsersList = !showUsersList" data-ng-hide="!showUsersList">
+                &times;
+            </span>
+          </h3>
+      </header>
+    <section class="login-view">
+      <div class="login-header">
+          <h2>Type a Nickname</h2>
+          <p>and pick a chat room</p>
+      </div>
+      <input type="text" size="12" maxlength="15" name="nickname" data-ng-model="nickname" placeholder="Nickname" autofocus>
+
+      <ul class="pick-rooms">
+          <li data-ng-repeat="room in rooms" data-ng-click="selectRoom($index)">
+            <a href="#">{{room.title}}</a>
+          </li>
+          <li data-ng-click="showNew = !showNew">
+            <a href="#">Create new chat room</a>
+          </li>
+      </ul>
+
+      <div class="new-chat-room-container" data-ng-class="{fadein: showNew}">
+        <!--
+        <input type="text" size="22" maxlength="22" name="new-chat-room" data-ng-model="newChatroom" placeholder="New chat room" autofocus>
+        <button >Submit</button>
+        -->
+        <h3>Coming soon</h3>
+        <p>Contact saladatododia@hotmail to donate and help us funding new features</p>
+      </div>
+    </section>
+
+    <section 
+      class="chat-view" 
+      data-ng-class="{'show-users-list': showUsersList}"
+      >
+      <div class="messages-container">
+        <ul class="chat-messages scroll" id="chat-messages">
+          <li 
+            data-ng-repeat="message in messages track by $index" 
+            data-ng-class="{self: message.user.self}">
+            
+            <div class="message-container zoomin">
+                <span class="tip"></span>
+              <span class="sender">
+                {{message.user.self ? 'Me' : message.user.username}}
+              </span>
+              <!--to
+              <span class="receiver">{{message.to.username}}</span>:
+              -->
+
+              <div class="message" >
+                <span class="message-content">{{message.message}} </span>
+                <span class="message-time">{{message.time}}</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul 
+          class="users-list-container scroll zoomin" 
+          data-ng-init="sendTo = 'everyone'" 
+          >          
+          <li data-ng-class="{active: sendTo == 'everyone', 'show-users-list': showUsersList}">
+            <a href="" data-ng-click="sendTo = 'everyone'">Everyone</a>            
+          </li>
+          <li 
+              data-ng-repeat="user in usersList track by $index | filter: !user.self" 
+              data-ng-hide="user.self || !user" 
+              data-ng-click="sendTo = user.id"
+              data-ng-class="{active: $parent.sendTo == user.id}"
+              >
+            <a href="#" data-ng-click="$parent.sendTo = user.id">{{user.username}}</a>            
+          </li>    
+        </ul>
+        <div class="input-group chat-inbox-group">
+          <textarea type="text" data-ng-model="message" data-ng-keyup="send($event, sendTo)" id="chat-inbox" placeholder="Type a message and hit [ENTER]" autofocus>
+
+            </textarea>
+          <button ng-click="send(null, sendTo)" class="submit-chat">Send</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script src="js/angular.js"></script>
+
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>-->
+  <script src="//localhost:3696/socket.io/socket.io.js"></script>
+  <script src="js/io.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
