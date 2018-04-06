@@ -2,12 +2,12 @@
 # app
 This is a simple app that uses socket io + angularjs v1.2.32.
 
-The client sends a message to the server and the server broadcast this message back.
+The client sends a message to the server and the server broadcasts this message back.
 
 ![Screenshot](prints/chat-001.png)
 
 ### TODO:
-- [x] Create a new project on Github
+- [x] Create a new project on Github.
 - [x] Right now it is only showing the last message. We need it to list all the messages sent in a session. It could be a list `ul > li`.
 - [x] Add the date and time for each message.
 - [x] Add a validation, don't let the user hit send if there nothing to be sent.
@@ -20,17 +20,17 @@ The client sends a message to the server and the server broadcast this message b
 - [x] Make it pretty.
 
 ### TODO(update):
-1) [ ] Fix close button icon size
-2) [ ] Fiz messages animation:
-        When the user clicks the close icon all messages animation. Prevent them from doing so.
-3) [ ] Refactor io.services
-4) [ ] Allow users to send public messages others in the same room. Now they can only send messages to everyone or private messages to another user.
-    The message should apper like this: 
-    Mike to Brian : Hi, Brian
+1) [ ] Fix close button icon size.
+2) [ ] Fix messages animation:  
+        When the user clicks the close icon all messages animate. Prevent them from doing so.
+3) [ ] Refactor io.services.
+4) [ ] Allow users to send public messages to others users in the same room. Now they can only send messages to everyone or private messages to another user.  
+    The message should appear like this:   
+    Mike to Brian : Hi, Brian.  
 
     When a user choose to talk privatly to another user a new view(room) show be created.
-5) [ ] Allow user to create a new room. Right now there's only two rooms.
-6) [ ] For distante future: Allow the user to use or upload an avatar
+5) [ ] Allow the user to create a new room. Right now there's only two rooms.
+6) [ ] For a distante future: Allow the user to use or upload an avatar.
 
 
 ## Running
